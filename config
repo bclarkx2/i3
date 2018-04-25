@@ -160,7 +160,7 @@ bar {
 # window behavior
 
 hide_edge_borders both
-new_window none
+new_window 1pixel
 
 # left/right workspaces
 bindsym $mod+Control+Left workspace prev
