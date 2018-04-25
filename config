@@ -155,6 +155,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status -c "/home/brian/.config/i3/i3status.conf"
         tray_output primary
+	mode hide
 }
 
 # window behavior
