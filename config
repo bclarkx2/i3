@@ -155,7 +155,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status -c "/home/brian/.config/i3/i3status.conf"
         tray_output primary
-	mode hide
 }
 
 # window behavior
@@ -172,7 +171,7 @@ bindsym $mod+Shift+Control+Right move container to workspace next; workspace nex
 
 # toggle touchpad
 bindcode 199 exec "synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*0')"
-
+exec --no-startup-id synclient HorizScrollDelta=-111 VertScrollDelta=-111
 
 # brightness controls
 bindcode 233 exec BRIGHTNESS=$(xrandr --verbose | grep -i brightness | cut -f2 -d ' ' | head -n1) && xrandr --output eDP-1-1 --brightness $(echo "if($BRIGHTNESS >= 1.0) 1.0 else $BRIGHTNESS + 0.1"| bc)
@@ -200,4 +199,3 @@ exec --no-startup-id i3-msg 'workspace 1; exec subl'
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
 
 exec --no-startup-id i3-msg 'workspace 2; exec google-chrome'
-
