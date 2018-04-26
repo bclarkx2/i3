@@ -191,13 +191,17 @@ bindsym $mod+Control+s exec subl
 bindsym $mod+Control+l exec slack                
 
 
-# startup
+## startup
 
+# volume, brightness, touchpad settings
 exec --no-startup-id amixer -D pulse sset Master 50% mute
 exec --no-startup-id xrandr --output eDP-1-1 --brightness 0.5
 exec --no-startup-id synclient TouchpadOff=1
 
+# wifi applet
+exec --no-startup-id nm-applet
 
+# starting programs
 exec --no-startup-id i3-msg 'workspace 1; exec subl'
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
 
