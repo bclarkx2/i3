@@ -188,7 +188,8 @@ bindcode 150 exec systemctl suspend
 # program keybindings
 bindsym $mod+Control+c exec google-chrome
 bindsym $mod+Control+s exec subl
-bindsym $mod+Control+l exec slack                
+bindsym $mod+Control+l exec slack
+bindsym $mod+Control+p exec spotify
 
 # screenshots
 
