@@ -169,6 +169,9 @@ bindsym $mod+Control+Right workspace next
 bindsym $mod+Shift+Control+Left move container to workspace prev; workspace prev
 bindsym $mod+Shift+Control+Right move container to workspace next; workspace next
 
+# text inserts
+bindsym $mod+Shift+grave exec printf '¯\_(ツ)_/¯' | xclip -sel clip
+
 # toggle touchpad
 bindcode 199 exec "synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*0')"
 exec --no-startup-id synclient HorizScrollDelta=-111 VertScrollDelta=-111
