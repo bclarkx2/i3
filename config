@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $scripts ~/.config/i3/scripts
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -149,6 +150,21 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Control mode that handles shut down, suspend, lock, etc
+mode "control" {
+
+        bindsym s exec $scripts/control.sh suspend; mode "default"
+        bindsym h exec $scripts/control.sh halt; mode "default"
+        bindsym l exec $scripts/control.sh logout; mode "default"
+        bindsym r exec $scripts/control.sh restart; mode "default"
+        bindsym k exec $scripts/control.sh lock; mode "default"
+        
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Escape mode "control"
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
